@@ -11,11 +11,11 @@ pipeline {
 }
         stage('Install npm prerequisites'){
             steps{
-                sh'npm audit fix'
-                sh'npm install'
-                sh'npm run build'
+                sh'ng audit fix'
+                sh'ng install'
+                sh'ng run build'
                 sh'cd /var/lib/jenkins/workspace/Trading-ui-pipeline/build'
-                sh'pm2 --name Trading-UI start npm -- start'
+                sh'pm2 --name Trading-UI start ng -- start'
             }
         }
     }
